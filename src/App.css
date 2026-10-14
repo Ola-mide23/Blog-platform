@@ -1,8 +1,44 @@
-.Navbar{
+.App{
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+  background-color: #e9f1f9;
+
+  .simple{
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .simple-blog{
+    text-align: center;
+    justify-content: center;
+    font-size: large;
+  }
+}
+.nav-bar{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  color:blue;
+}
+.nav-button{
+    background-color: #3476df;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 menu1{
   font-size: 90px;
+}
+.card-component{
+display: block;
+padding-bottom: 50px
+}
+.card-component-content{
+  background-color: #fff;
 }
