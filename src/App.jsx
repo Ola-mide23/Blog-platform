@@ -4,30 +4,38 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
-function Navbar() {
 
-  return(
+function Navbar () {
+  return (
     <>
-      <nav className='nav-bar'>
-        <h1 className='menu1'>BlogPost</h1>
-        <div className="menu2">
-           <a href="" className='menu2'>Home</a>
-           <a href="" className='menu3'>About</a>
-        </div>
-      </nav>
+       <h1>BlogPost</h1>
+       <div className="menu">
+          <a href="">Home</a>
+          <a href="">About</a>
+       </div>
     </>
   )
 }
 
+function Blogcomponent() {
+  return(
+    <div className="card-component">
+      <h2>My Journey into React</h2>
+      <p>Learn about my experience with React development.</p>
+      <button>Read More</button>
+
+    </div>
+  )
+}
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    
+      <Navbar />
       <h1>My Blog Platform</h1>
       <p>Share your thought with the world</p>
-      <Navbar />
+      <Blogcomponent />
     </>
   )
 }
