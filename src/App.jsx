@@ -14,6 +14,29 @@ function Navbar () {
   )
 }
 
+
+function NewPost() {
+  return (
+    <form action="submit" className="new-form">
+       h2.create
+    </form>
+  )
+}
+
+function ClearButton() {
+
+    const [message, setMessage] = useState(false)
+
+  return (
+    <>
+      <button className="show" onClick={() =>
+        setMessage(!message)}>Show messsage</button>
+      {message && <h2 className="active">Welcome to my Blog</h2>}
+    </>
+    
+  )
+}
+
 function Blogcomponent() {
   return(
     <div className="card-component">
@@ -45,6 +68,7 @@ function App() {
       <h1 className='simple'>Simple Blogging Platform</h1>
       <p className='simple-blog'>A small blog platform where users can read posts and publish their own thoughts. This is the reference design for your React project</p>
       <Blogcomponent />
+      <ClearButton />
     </div>
   )
 }

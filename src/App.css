@@ -52,7 +52,6 @@ padding-bottom: 50px
     padding: 6px;
     text-align: center;
     font-weight: bold;
-    
     border-radius: 20px;
 
   }
@@ -64,4 +63,12 @@ padding-bottom: 50px
     font-style: italic;
 
   }
+}
+.show{
+  color: blue;
+  padding: 10px;
+  border: none;
+  background-color: #7ea3df;
+  border-radius: 10px;
+  cursor: pointer;
 }
