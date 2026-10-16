@@ -27,7 +27,7 @@ function NewPost() {
        </div>
        <div className="content">
         <h3>Content</h3>
-        <input type="text"  placeholder='Write your blog content...' className='second-input' />
+        <textarea type="text"  placeholder='Write your blog content...' className='second-input' />
        </div>
        <button className="publish">publish blog</button>
     </form>
