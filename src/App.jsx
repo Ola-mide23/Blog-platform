@@ -18,7 +18,18 @@ function Navbar () {
 function NewPost() {
   return (
     <form action="submit" className="new-form">
-       h2.create
+       <div className="top-line">
+        <h2>Create a Blog</h2>
+       </div>
+       <div className="title">
+        <h3>Title</h3>
+        <input type="text" placeholder='Enter your blog post'/>
+       </div>
+       <div className="content">
+        <h3>Content</h3>
+        <input type="text" placeholder='Write your blog content...'/>
+       </div>
+       <button className="publish">publish blog</button>
     </form>
   )
 }
@@ -69,6 +80,7 @@ function App() {
       <p className='simple-blog'>A small blog platform where users can read posts and publish their own thoughts. This is the reference design for your React project</p>
       <Blogcomponent />
       <ClearButton />
+      <NewPost />
     </div>
   )
 }
