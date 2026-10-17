@@ -5,14 +5,12 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 
-function Navbar () {
-
-  const [setform, setSetform] = useState(false)
+function Navbar (props) {
 
   return (
     <nav className="nav-bar">
        <h1>BlogPost</h1>
-       <button className="nav-button" onClick={() => setSetform(!setform)}>+New Post</button>
+       <button className="nav-button" onClick={props.onNewPost}>+New Post</button>
     </nav>
   )
 }
@@ -76,14 +74,16 @@ function Blogcomponent() {
 
 function App() {
 
+  const [setform, setSetform] = useState(false)
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar onNewPost={() => setSetform(!setform)} />
       <h1 className='simple'>Simple Blogging Platform</h1>
       <p className='simple-blog'>A small blog platform where users can read posts and publish their own thoughts. This is the reference design for your React project</p>
       <Blogcomponent />
       <ClearButton />
-      <NewPost />
+      {setform && <NewPost />}
     </div>
   )
 }
