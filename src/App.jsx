@@ -6,10 +6,13 @@ import './App.css'
 
 
 function Navbar () {
+
+  const [setform, setSetform] = useState(false)
+
   return (
     <nav className="nav-bar">
        <h1>BlogPost</h1>
-       <button className="nav-button">+New Post</button>
+       <button className="nav-button" onClick={() => setSetform(!setform)}>+New Post</button>
     </nav>
   )
 }
