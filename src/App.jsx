@@ -16,19 +16,30 @@ function Navbar (props) {
 }
 
 
-function NewPost() {
+function NewPost(props) {
+ 
+  const [title, setTitle] = useState('')
+  const [content, setContent] = useState('')
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Title:', title)
+    console.log('Content:', content)
+    props.onAddPost(title, content)
+  }
+
   return (
-    <form action="submit" className="new-form">
+    <form onSubmit={handleSubmit} className="new-form">
        <div className="top-line">
         <h2>Create a Blog</h2>
        </div>
        <div className="title">
         <h3>Title</h3>
-        <input type="text" placeholder='Enter your blog post'/>
+        <input type="text" placeholder='Enter your blog post' value={title} onChange={(e) => setTitle(e.target.value)} />
        </div>
        <div className="content">
         <h3>Content</h3>
-        <textarea type="text"  placeholder='Write your blog content...' className='second-input' />
+        <textarea type="text"  placeholder='Write your blog content...' className='second-input' value={content} onChange={(e) => setContent(e.target.value)} />
        </div>
        <button className="publish">publish blog</button>
     </form>
@@ -76,6 +87,10 @@ function App() {
 
   const [setform, setSetform] = useState(false)
 
+  function addPost(title, content) {
+    console.log('New Post:', title, content)
+  }
+
   return (
     <div className="App">
       <Navbar onNewPost={() => setSetform(!setform)} />
@@ -83,7 +98,7 @@ function App() {
       <p className='simple-blog'>A small blog platform where users can read posts and publish their own thoughts. This is the reference design for your React project</p>
       <Blogcomponent />
       <ClearButton />
-      {setform && <NewPost />}
+      {setform && <NewPost onAddPost={addPost} />}
     </div>
   )
 }
